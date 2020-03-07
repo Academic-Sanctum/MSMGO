@@ -15,6 +15,7 @@ func main() {
 	}
 }
 
+//临时的方案
 func run(CommandName string) error {
 	cmd := exec.Command(CommandName)
 
