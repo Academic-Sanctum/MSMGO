@@ -33,3 +33,4 @@ _testmain.go
 /server/whitelist.json
 /server/logs
 /server/.mixin.out
+/server/crash-reports
