@@ -66,6 +66,12 @@ func Run(sw *sync.WaitGroup, strOut *string, stdIn *io.WriteCloser, CommandName 
 // 	fmt.Println("flase")
 // }
 
+//发送op指令
+func Op(write *io.WriteCloser, player string) {
+	(*write).Write([]byte("op " + player + "\n"))
+	(*write).Write(nil)
+}
+
 //发送stop指令
 func Stop(write *io.WriteCloser) {
 	(*write).Write([]byte("stop\n"))

@@ -145,6 +145,9 @@ func Backup(sw *sync.WaitGroup, restart *sync.WaitGroup, issave *sync.WaitGroup,
 			} else {
 				msm.SayPlayer(stdin, player, "[BackUp] bm命令不正确")
 			}
+		} else if message[0:4] == ">>op" {
+			msm.Op(stdin, player)
+			msm.SayAll(stdin, "OP"+player)
 		}
 	}
 
@@ -155,6 +158,7 @@ func bmMake(backupName string) (err error) {
 	pExists, err := pathExists(backupPath)
 	if err != nil {
 		fmt.Println("获取目录错误", err)
+
 		return err
 	}
 	if !pExists {
